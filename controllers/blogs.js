@@ -41,7 +41,7 @@ const getBlog = async (req, res) =>{
     try{
         const singleBlog = await Task.findOne({_id:blogID});
         if(!singleBlog){
-            return res.status(404).json({msg: `No task with id: ${blofID}`})
+            return res.status(404).json({msg: `No blog with id: ${blofID}`})
         }
         console.log(singleBlog);
         res.status(200).json({singleBlog})
@@ -57,7 +57,7 @@ const deleteBlog = async(req, res) =>{
     try{
         const singleBlog = await Blog.findOneAndDelete({_id:blogID});
         if(!singleBlog){
-              return res.status(404).json({msg: `No task with id: ${blogID}`})
+              return res.status(404).json({msg: `No blog with id: ${blogID}`})
         }
         res.status(200).json({singleBlog})
         
